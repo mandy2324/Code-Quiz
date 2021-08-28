@@ -2,10 +2,10 @@ var startbutton = document.getElementById("start-button");
 var timer = document.getElementById('timer')
 var questionContainer = document.getElementById("question-container")
 var questionText = document.getElementById("question-text")
-var answerA = document.getElementById("a")
-var answerB = document.getElementById("b")
-var answerC = document.getElementById("c")
-var answerD = document.getElementById("d")
+    // var answerA = document.getElementById("a")
+    // var answerB = document.getElementById("b")
+    // var answerC = document.getElementById("c")
+    // var answerD = document.getElementById("d")
 var startContainer = document.getElementById("start-container");
 var answers = document.getElementById("answers");
 var feedbackEl = document.getElementById("feedback");
@@ -20,32 +20,17 @@ var myQuestions = [{
     },
     {
         question: "Choose the correct HTML element for the largest heading:",
-        answers: {
-            a: '<head>',
-            b: '<h1>',
-            c: '<h6>',
-            d: '<heading>'
-        },
-        correctAnswer: 'b'
+        answers: ['<head>', '<h1>', '<h6>', '<heading>'],
+        correctAnswer: '<h1>'
     }, {
         question: "What is the correct HTML element for inserting a line break?",
-        answers: {
-            a: '<break>',
-            b: '<br>',
-            c: '<br/>',
-            d: '<lb>'
-        },
-        correctAnswer: 'b'
+        answers: ['<break>', '<br>', '<br/>', '<lb>'],
+        correctAnswer: '<br>'
 
     }, {
         question: "The condition in an if / else statement is enclosed within ____.",
-        answers: {
-            a: 'quotes',
-            b: 'curly brackets',
-            c: 'paranthesis',
-            d: 'square brackets'
-        },
-        correctAnswer: 'c'
+        answers: ['quotes', 'curly brackets', 'paranthesis', 'square brackets'],
+        correctAnswer: 'paranthesis'
     }
 ];
 
@@ -89,11 +74,12 @@ function loadNextQuestion() {
     answers.textContent = "";
 
     questionObject.answers.forEach(function(answer, index) {
+        console.log(answer);
         var answerEl = document.createElement("button");
         answerEl.setAttribute("class", "choice");
         answerEl.setAttribute("value", answer);
 
-        answerEl.textContent = (index + 1) + ". " + answer;
+        answerEl.textContent = index + 1 + ". " + answer;
 
         answerEl.onclick = function() {
             if (this.value !== myQuestions[currentQuestionIndex].correctAnswer) {
@@ -128,6 +114,8 @@ function loadNextQuestion() {
                 loadNextQuestion();
             }
         }
+
+        answers.appendChild(answerEl);
     });
 
 }
