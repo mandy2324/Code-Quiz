@@ -7,6 +7,18 @@ var startContainer = document.getElementById("start-container");
 var answers = document.getElementById("answers");
 var feedbackEl = document.getElementById("feedback");
 
+var endSection = document.getElementById("end");
+var endTitle = document.getElementById("end-title");
+var SCORE = document.getElementById("score");
+var INITIALS_INPUT = document.getElementById("initials");
+var SUBMIT_SCORE = document.getElementById("submit-score");
+var ERROR_MESSAGE = document.getElementById("error-message");
+
+
+var timeLeft = 0
+var quizTime = 0
+var score = 0
+
 var count = 90;
 var countDownTimer;
 var currentQuestionIndex = 0;
@@ -42,24 +54,32 @@ var myQuestions = [{
         correctAnswer: "A variable with a high-level, list-like object(s)"
     }
 ];
+//when click start button the timer starts
 
 function startTimer() {
 
     countDownTimer = setInterval(function() {
         timer.innerHTML = count;
         count--;
-        if (count === 0) {
-            stopTimer();
+        if (count <= 0) {
+            count = 0;
+            quizEnd();
             timer.innerHTML = 'Done';
             // or...
             alert("You're out of time!");
         }
+
+
     }, 1000);
+
+
 }
 
-function stopTimer() {
-    clearInterval(countDownTimer);
-}
+
+
+
+
+
 
 function startquiz() {
     startContainer.style.display = "none";
@@ -123,6 +143,106 @@ function loadNextQuestion() {
         answers.appendChild(answerEl);
     });
 
-}
 
+    /******** ENDING THE GAME ********/
+    function quizEnd() {
+
+        if (questionText < questionText.length)
+            showQuestion();
+        else
+            showSCORE();
+        clearInterval(timer);
+
+        showElement(endSection);
+        displayScore();
+        setEndHeading();
+    }
+
+    function displayScore() {
+        SCORE.textContent = count;
+    }
+
+    function setEndHeading() {
+        if (totalTime === 0) {
+            endTitle.textContent = "Sorry! time out!";
+        } else {
+            endTitle.textContent = "Congrats! Your done!";
+        }
+    }
+
+    /******** SUBMITTING INITIALS ********/
+    function processInput(event) {
+        event.preventDefault();
+
+        var initials = INITIALS_INPUT.value.toUpperCase();
+
+        if (isInputValid(initials)) {
+            var score = count;
+            var highscoreEntry = getNewHighscoreEntry(initials, score);
+            saveHighscoreEntry(highscoreEntry);
+            window.location.href = "./highscore.html";
+        }
+    }
+
+    function getNewHighscoreEntry(initials, score) {
+        var entry = {
+            initials: initials,
+            score: score,
+        }
+        return entry;
+    }
+
+    function isInputValid(initials) {
+        let errorMessage = "";
+        if (initials === "") {
+            errorMessage = "You can't submit empty initials!";
+            displayFormError(errorMessage);
+            return false;
+        } else if (initials.match(/[^a-z]/ig)) {
+            errorMessage = "Initials may only include letters."
+            displayFormError(errorMessage);
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function displayFormError(errorMessage) {
+        ERROR_MESSAGE.textContent = errorMessage;
+        if (!INITIALS_INPUT.classList.contains("error")) {
+            INITIALS_INPUT.classList.add("error");
+        }
+    }
+
+    function saveHighscoreEntry(highscoreEntry) {
+        var currentScores = getScoreList();
+        placeEntryInHighscoreList(highscoreEntry, currentScores);
+        localStorage.setItem('scoreList', JSON.stringify(currentScores));
+    }
+
+    function getScoreList() {
+        const currentScores = localStorage.getItem('scoreList');
+        if (currentScores) {
+            return JSON.parse(currentScores);
+        } else {
+            return [];
+        }
+    }
+
+    function placeEntryInHighscoreList(newEntry, scoreList) {
+        const newScoreIndex = getNewScoreIndex(newEntry, scoreList);
+        scoreList.splice(newScoreIndex, 0, newEntry);
+    }
+
+    function getNewScoreIndex(newEntry, scoreList) {
+        if (scoreList.length > 0) {
+            for (let i = 0; i < scoreList.length; i++) {
+                if (scoreList[i].score <= newEntry.score) {
+                    return i;
+                }
+            }
+        }
+        return scoreList.length;
+    }
+}
 startbutton.addEventListener("click", startquiz);
