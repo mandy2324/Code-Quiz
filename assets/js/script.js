@@ -2,10 +2,7 @@ var startbutton = document.getElementById("start-button");
 var timer = document.getElementById('timer')
 var questionContainer = document.getElementById("question-container")
 var questionText = document.getElementById("question-text")
-    // var answerA = document.getElementById("a")
-    // var answerB = document.getElementById("b")
-    // var answerC = document.getElementById("c")
-    // var answerD = document.getElementById("d")
+
 var startContainer = document.getElementById("start-container");
 var answers = document.getElementById("answers");
 var feedbackEl = document.getElementById("feedback");
@@ -31,6 +28,18 @@ var myQuestions = [{
         question: "The condition in an if / else statement is enclosed within ____.",
         answers: ['quotes', 'curly brackets', 'paranthesis', 'square brackets'],
         correctAnswer: 'paranthesis'
+    }, {
+        question: "Commonly used data types DO NOT include:",
+        answers: ["strings", "booleans", "alerts", "numbers"],
+        correctAnswer: "alerts"
+    }, {
+        question: "Arrays in Javascript can be used to store",
+        answers: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+        correctAnswer: "all of the above"
+    }, {
+        question: "What is an array?",
+        answers: ['Another word for a declared variable.', 'A variable with a high-level, list-like object(s)', 'A variable that will never change.', 'The sea creature that killed Steve Irwin.'],
+        correctAnswer: "A variable with a high-level, list-like object(s)"
     }
 ];
 
@@ -62,11 +71,7 @@ function startquiz() {
 function loadNextQuestion() {
     var questionObject = myQuestions[currentQuestionIndex]
     console.log(questionObject);
-    // questionText.textContent = questionObject.question
-    // answerA.textContent = questionObject.answers.a
-    // answerB.textContent = questionObject.answers.b
-    // answerC.textContent = questionObject.answers.c
-    // answerD.textContent = questionObject.answers.d
+
 
     var titleEl = document.getElementById("question-title");
     titleEl.textContent = questionObject.question;
