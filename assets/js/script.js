@@ -24,7 +24,7 @@ var countDownTimer;
 var currentQuestionIndex = 0;
 var myQuestions = [{
         question: "Inside which HTML element do we put the JavaScript?",
-        answers: ['<javascript>', '<js>', '<scripting>', '<script>'],
+        answers: ['<style.js>', '<jss.md>', '<scripting>', '<script>'],
         correctAnswer: '<script>'
     },
     {
@@ -49,9 +49,9 @@ var myQuestions = [{
         answers: ["numbers and strings", "other arrays", "booleans", "all of the above"],
         correctAnswer: "all of the above"
     }, {
-        question: "What is an array?",
-        answers: ['Another word for a declared variable.', 'A variable with a high-level, list-like object(s)', 'A variable that will never change.', 'The sea creature that killed Steve Irwin.'],
-        correctAnswer: "A variable with a high-level, list-like object(s)"
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:?",
+        answers: ['JavaScript.', 'Terminal/Bash', 'For Loops.', 'console.log.'],
+        correctAnswer: "For Loops."
     }
 ];
 //when click start button the timer starts
