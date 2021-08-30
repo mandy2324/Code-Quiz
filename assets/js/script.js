@@ -75,12 +75,7 @@ function startTimer() {
 
 }
 
-
-
-
-
-
-
+//when the quiz starts 
 function startquiz() {
     startContainer.style.display = "none";
     startTimer();
@@ -119,27 +114,26 @@ function loadNextQuestion() {
                 //play wrong sound
 
                 feedbackEl.textContent = "Wrong answer!";
+
             } else {
                 // play right sound
 
                 feedbackEl.textContent = "Right answer!";
+                score++
             }
 
             feedbackEl.setAttribute("class", "feedback");
-
             setTimeout(function() {
                 feedbackEl.setAttribute("class", "feedback hide");
             }, 2000);
 
             currentQuestionIndex++;
-
             if (currentQuestionIndex === myQuestions.length) {
                 quizEnd();
             } else {
                 loadNextQuestion();
             }
         }
-
         answers.appendChild(answerEl);
     });
 
@@ -147,15 +141,22 @@ function loadNextQuestion() {
     /******** ENDING THE GAME ********/
     function quizEnd() {
 
-        if (questionText < questionText.length)
+        if (questionText = questionText.Length)
             showQuestion();
         else
             showSCORE();
         clearInterval(timer);
 
-        showElement(endSection);
+        startContainer(endSection);
         displayScore();
         setEndHeading();
+    }
+
+    function startContainer(siblingList, startContainer) {
+        for (element of siblingList) {
+            hideElement(element);
+        }
+        startContainer.classList.remove("hidden");
     }
 
     function displayScore() {
