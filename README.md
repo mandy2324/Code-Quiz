@@ -1,24 +1,18 @@
-# 04 Web APIs: Code Quiz
+# Code-Quiz
 
-## Your Task
+## Assignment
 
-At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment&mdash;perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges. 
 
-To help familiarize you with these tests and allow you to use the skills covered in this unit, this week’s homework invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
 
-This week’s coursework will equip you with all the skills you need to succeed in this assignment.
+ This week’s homework is about build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code. It has a clean, polished, and responsive user interface. 
 
-## User Story
 
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+
+
+
 
 ## Acceptance Criteria
 
-```
 GIVEN I am taking a code quiz
 WHEN I click the start button
 THEN a timer starts and I am presented with a question
@@ -30,33 +24,26 @@ WHEN all questions are answered or the timer reaches 0
 THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score
-```
+
 
 ## Mock-Up
 
 The following animation demonstrates the application functionality:
 
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/04-web-apis-homework-demo.gif)
+![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/image/demo.gif)
 
-## Grading Requirements
 
-This homework is graded based on the following criteria: 
 
-### Technical Acceptance Criteria: 40%
+### Deployment:
 
-* Satisfies all of the preceding acceptance criteria.
+* To access the live application [click here]().
 
-### Deployment: 32%
 
-* Application deployed at live URL.
+* For applications GitHub URL [click here](https://github.com/mandy2324/Code-Quiz.git).  
 
-* Application loads with no errors.
 
-* Application GitHub URL submitted.
 
-* GitHub repository contains application code.
-
-### Application Quality: 15%
+### Application Quality:
 
 * Application user experience is intuitive and easy to navigate.
 
@@ -64,7 +51,7 @@ This homework is graded based on the following criteria:
 
 * Application resembles the mock-up functionality provided in the homework instructions.
 
-### Repository Quality: 13%
+### Repository Quality: 
 
 * Repository has a unique name.
 
@@ -76,14 +63,8 @@ This homework is graded based on the following criteria:
 
 * Repository contains quality readme file with description, screenshot, and link to deployed application.
 
-## Review
+## Contact Me: 
 
-You are required to submit BOTH of the following for review:
+* [ GITHUB.](https://github.com/mandy2324)
 
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
-
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+* [ LINKEDIN.](https://www.linkedin.com/in/m23saini) 
