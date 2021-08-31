@@ -199,7 +199,13 @@ function loadNextQuestion() {
         }
     }
 
-    // // submit initials 
+    // Create an input element for initials 
+    submitButton.onclick = function() {
+        SCORE.textContent = count;
+        localStorage.setItem('displayScore', 'initials')
+    }
+
+
 
 
     //add intials to local storage
