@@ -119,7 +119,7 @@ function loadNextQuestion() {
     console.log(questionObject);
 
 
-    // var titleEl = document.getElementById("question-title");
+
     // updating question from html page
     titleEl.textContent = questionObject.question;
 
@@ -140,16 +140,11 @@ function loadNextQuestion() {
                 if (count < 0) {
                     count = 0;
                 }
-
                 timer.textContent = count;
-
-                //play wrong sound
 
                 feedbackEl.textContent = "Wrong answer!";
 
             } else {
-                // play right sound
-
                 feedbackEl.textContent = "Right answer!";
                 score++
             }
@@ -170,28 +165,23 @@ function loadNextQuestion() {
     });
 
 
-    /******** ENDING THE GAME ********/
+    //    Quiz End 
     function quizEnd() {
 
         if (titleEl === titleEl.length)
             showQuestion();
         else
-        // showSCORE();
+
             questionContainer.style.display = "none";
-        // endSection.style.display = "inline";
+
         endSection.classList.remove("hidden");
         clearInterval(countDownTimer);
-        // startContainer(endSection);
+
         displayScore();
         setEndHeading();
     }
 
-    // function startContainer(siblingList, startContainer) {
-    //     for (element of siblingList) {
-    //         hideElement(element);
-    //     }
-    //     startContainer.classList.remove("hidden");
-    // }
+
 
     function displayScore() {
         SCORE.textContent = count;
@@ -205,7 +195,7 @@ function loadNextQuestion() {
         }
     }
 
-    /******** SUBMITTING INITIALS ********/
+    // submit initials 
     function processInput(event) {
         event.preventDefault();
 
