@@ -1,8 +1,8 @@
 var startbutton = document.getElementById("start-button");
 var timer = document.getElementById('timer')
 var questionContainer = document.getElementById("question-container")
-var questionText = document.getElementById("question-text")
-
+    // var questionText = document.getElementById("question-text")
+var titleEl = document.getElementById("question-title");
 var startContainer = document.getElementById("start-container");
 var answers = document.getElementById("answers");
 var feedbackEl = document.getElementById("feedback");
@@ -54,6 +54,38 @@ var myQuestions = [{
         correctAnswer: "For Loops."
     }
 ];
+
+/******** ENDING THE GAME ********/
+function quizEnd() {
+
+    if (titleEl === titleEl.length)
+        showQuestion();
+    else
+        showSCORE();
+    clearInterval(timer);
+    startContainer(endSection);
+    displayScore();
+    setEndHeading();
+}
+
+function startContainer(siblingList, startContainer) {
+    for (element of siblingList) {
+        hideElement(element);
+    }
+    startContainer.classList.remove("hidden");
+}
+
+function displayScore() {
+    SCORE.textContent = count;
+}
+
+function setEndHeading() {
+    if (totalTime === 0) {
+        endTitle.textContent = "Sorry! time out!";
+    } else {
+        endTitle.textContent = "Congrats! Your done!";
+    }
+}
 //when click start button the timer starts
 
 function startTimer() {
@@ -68,8 +100,6 @@ function startTimer() {
             // or...
             alert("You're out of time!");
         }
-
-
     }, 1000);
 
 
@@ -84,11 +114,13 @@ function startquiz() {
 }
 
 function loadNextQuestion() {
+    console.log("currentQuestionIndex =", currentQuestionIndex);
     var questionObject = myQuestions[currentQuestionIndex]
     console.log(questionObject);
 
 
-    var titleEl = document.getElementById("question-title");
+    // var titleEl = document.getElementById("question-title");
+    // updating question from html page
     titleEl.textContent = questionObject.question;
 
     answers.textContent = "";
@@ -141,30 +173,32 @@ function loadNextQuestion() {
     /******** ENDING THE GAME ********/
     function quizEnd() {
 
-        if (questionText = questionText.Length)
+        if (titleEl === titleEl.length)
             showQuestion();
         else
-            showSCORE();
-        clearInterval(timer);
-
-        startContainer(endSection);
+        // showSCORE();
+            questionContainer.style.display = "none";
+        // endSection.style.display = "inline";
+        endSection.classList.remove("hidden");
+        clearInterval(countDownTimer);
+        // startContainer(endSection);
         displayScore();
         setEndHeading();
     }
 
-    function startContainer(siblingList, startContainer) {
-        for (element of siblingList) {
-            hideElement(element);
-        }
-        startContainer.classList.remove("hidden");
-    }
+    // function startContainer(siblingList, startContainer) {
+    //     for (element of siblingList) {
+    //         hideElement(element);
+    //     }
+    //     startContainer.classList.remove("hidden");
+    // }
 
     function displayScore() {
         SCORE.textContent = count;
     }
 
     function setEndHeading() {
-        if (totalTime === 0) {
+        if (count === 0) {
             endTitle.textContent = "Sorry! time out!";
         } else {
             endTitle.textContent = "Congrats! Your done!";
