@@ -5,11 +5,15 @@
                }
                 */
                 
+                html {
+                    padding: 2rem;
+                }
+                
                 #question-container {
                     display: none;
                 }
                 
-                span#timer\ {
+                .countdown {
                     width: 11vw;
                     font-weight: bolder;
                 }
