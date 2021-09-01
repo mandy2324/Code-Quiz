@@ -36,7 +36,7 @@ The following animation demonstrates the application functionality:
 
 ### Deployment:
 
-* To access the live application [click here]().
+* To access the live application [click here](https://mandy2324.github.io/Code-Quiz/).
 
 
 * For applications GitHub URL [click here](https://github.com/mandy2324/Code-Quiz.git).  
