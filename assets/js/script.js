@@ -16,8 +16,10 @@ var INITIALS_INPUT = document.getElementById("input-initials");
 var SUBMIT_SCORE = document.getElementById("submit-score");
 var ERROR_MESSAGE = document.getElementById("error-message");
 
+
+
 var submitButton = document.getElementById("submit-btn");
-var scoreList = document.getElementById("score-list")
+
 
 var timeLeft = 0
 var quizTime = 0
@@ -65,8 +67,8 @@ function quizEnd() {
     if (titleEl === titleEl.length)
         showQuestion();
     else
-        showSCORE();
-    clearInterval(timer);
+    // showSCORE();
+        clearInterval(timer);
     startContainer(endSection);
     displayScore();
     setEndHeading();
@@ -200,15 +202,18 @@ function loadNextQuestion() {
     }
 
     // Create an input element for initials 
-    submitButton.onclick = function() {
+    submitButton.onclick = function(event) {
+        event.preventDefault();
+
+        var allScores = JSON.parse(localStorage.getItem("displayScore")) || [];
         SCORE.textContent = count;
-        localStorage.setItem('displayScore', 'initials')
+        console.log(allScores);
+        var currentScore = { Score: count, initials: INITIALS_INPUT.value };
+        allScores.push(currentScore);
+        localStorage.setItem('displayScore', JSON.stringify(allScores))
+            // show the highscore page
+        window.location.replace("highscore.html");
     }
-
-
-
-
-    //add intials to local storage
 
 }
 
