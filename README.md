@@ -1,70 +1,42 @@
 # Code-Quiz
 
-## Assignment
+
+![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
 
 
+## Description 
+This project is a coding quiz that will start when the start button is clicked. Once the quiz has started the user is presented with a question and a timer will start. Once all the questions are answered or time reaches zero, the quiz will end and a user will be able to view and save their high score.
 
- This week’s homework is about build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code. It has a clean, polished, and responsive user interface. 
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
+## Installation 
+No installation required. If contributors would like to add on, clone Git Hub repo. 
 
+## Usage 
+This application will allow users to take a quiz on their knowledge of coding!<br>
+Please view deployed Git Hub [URL](https://github.com/mandy2324/Code-Quiz.git)
 
+To access the live application [click here](https://mandy2324.github.io/Code-Quiz/).
 
-
-
-## Acceptance Criteria
-
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
-
-
-## Mock-Up
-
-The following animation demonstrates the application functionality:
 
 ![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](.//Assets/image/demo.gif)
 
 
+## License 
+This project is license under MIT
 
-### Deployment:
+## Contributing 
+Contributors should read the installation section. 
 
-* To access the live application [click here](https://mandy2324.github.io/Code-Quiz/).
+## Tests
+There are no tests for this application. 
 
+## Questions
+If you have any questions about this projects, please contact me on  [ LINKEDIN.](https://www.linkedin.com/in/m23saini). You can view more of my projects at  [ GITHUB.](https://github.com/mandy2324)
 
-* For applications GitHub URL [click here](https://github.com/mandy2324/Code-Quiz.git).  
-
-
-
-### Application Quality:
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Contact Me: 
-
-* [ GITHUB.](https://github.com/mandy2324)
-
-* [ LINKEDIN.](https://www.linkedin.com/in/m23saini) 
