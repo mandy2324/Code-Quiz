@@ -25,7 +25,8 @@ Please view deployed Git Hub [URL](https://github.com/mandy2324/Code-Quiz.git)
 To access the live application [click here](https://mandy2324.github.io/Code-Quiz/).
 
 
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](.//Assets/image/demo.gif)
+<img src="https://raw.githubusercontent.com/mandy2324/Code-Quiz/master/assets/image/demo.gif">
+
 
 
 ## License 
